@@ -1,0 +1,365 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: white;
+    color: black;
+    font-family: "Avenir Next", sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    font-family: "Avenir Next", sans-serif;
+    position:absolute;             /* position in the center of the screen */
+    height:100%;                   /* text area height */
+    width:100%;                   /* text area width */
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.app-scroll {
+    font-family: "Avenir Next", sans-serif;
+    position:absolute;             /* position in the center of the screen */
+    width:100%;                   /* text area width */
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+.app-nav {
+    color: white;
+    width: 100%;
+    height: 10%;
+    background-color: #009688;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.app-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.app-contents-table {
+    color: black;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: normal;
+    width: 90%;
+    margin-top: 35px;
+    margin-left: 30px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.app-contents-table th {
+    font-weight: normal;
+    padding-bottom: 15px;
+}
+
+.app-contents-table td {
+    font-weight: lighter;
+}
+
+.app-contents-table-main {
+    color: black;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: normal;
+    width: 90%;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 18px;
+    text-align: left;
+    /* border: solid; */
+}
+
+.app-contents-table-main th {
+    font-weight: normal;
+    padding-bottom: 15px;
+}
+
+.app-contents-table-main td {
+    font-weight: lighter;
+}
+
+.app-contents-table-subtotal {
+    color: black;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: normal;
+    width: 90%;
+    margin-top: 40px;
+    margin-left: 30px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.app-contents-table-balance td {
+    padding-top: 10px;
+}
+
+.app-contents-table-balance-bill-summary td {
+    padding-top: 20px;
+}
+
+.app-tips-input1 {
+    position: fixed;
+    border: solid 1px rgba(151, 151, 151, 0.38);
+    bottom: 165px;
+    left: 220px;
+    width: 50px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.app-tips-input1:focus {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 10px rgba(31, 191, 136, 0.6);
+}
+
+.app-tips-input2 {
+    position: fixed;
+    border: solid 1px rgba(151, 151, 151, 0.38);
+    bottom: 165px;
+    left:100px;
+    width: 50px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.app-tips-input2:focus {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 10px rgba(31, 191, 136, 0.6);
+}
+
+.app-tips-percent {
+    color: black;
+    font-size: 18px;
+    bottom: 165px;
+    left: 170px;
+    position: fixed;
+}
+
+.app-tips-equals {
+    color: black;
+    font-size: 20px;
+    bottom: 165px;
+    left: 195px;
+    position: fixed;
+}
+
+.app-contents-table-balance {
+    font-family: "AvenirNext-Medium", sans-serif;
+}
+
+.app-button-split-bill {
+    margin-top: 20px;
+    background-color: #009688;
+    width: 90%;
+    height: 40px;
+    margin-left: 20px;
+    text-align: center;
+    color: white;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 25px;
+}
+.app-button-split {
+    margin-top: 10px;
+    background-color: #009688;
+    width: 90%;
+    height: 40px;
+    text-align: center;
+    color: white;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+.app-button-split-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-contents-header {
+    font-family: "AvenirNext-Medium", sans-serif;
+}
+
+.grad {
+    background: #009688; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(-90deg, #27b7ff, #00c1a5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-90deg, #27b7ff, #00c1a5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-90deg, #27b7ff, #00c1a5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-90deg, #27b7ff, #00c1a5); /* Standard syntax (must be last) */
+}
+
+.app-contents-payment-successful {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding-top: 120px;
+}
+
+.app-payment-successful-text {
+    color: black;
+    width: 70%;
+}
+
+.app-payment-successful-circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.app-payment-successful-tick {
+    visibility: visible;
+    width: 180px;
+    height: 180px;
+    border-radius: 120px;
+    position: relative;
+}
+
+.accent {
+    font-family: "AvenirNext-DemiBold", sans-serif;
+    color: #00c1a5;
+}
+
+.app-contents-processing-bill {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-processing-bill-text {
+    color: black;
+    font-family: "AvenirNext-UltraLight", sans-serif;
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+.app-processing-bill-circles {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 65%;
+}
+
+.circ {
+    max-width: 50px;
+    max-height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+}
+
+.circ-small {
+    max-width: 30px;
+    max-height: 30px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.circ-fade {
+    max-width: 50px;
+    max-height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    opacity: 0.2;
+}
+
+.app-contents-bill-summary {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.tips-flex {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    position: fixed;
+    bottom: 180px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: space-between;
+    justify-items: flex-start;
+    width: 80%;
+}
+
+input {
+    border: solid 1px rgba(151, 151, 151, 0.38);
+    border-radius: 3px;
+    width: 50px;
+    outline: none;
+}
+
+input:focus {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 10px rgba(31, 191, 136, 0.6);
+}
