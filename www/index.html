@@ -47,49 +47,11 @@
 <body>
   <div class="app">
     <body onload="goToHome(); get_order();">
-      <div class="app">
-        <div id="order-confirmation" class="app-nav">
+      <div class="app" style="background: url(img/index_1.png)">
+        <div id="order-confirmation" >
           <div class="app" >
-            <div class="app-nav grad">Order Confirmation</div>
             <div class="app-contents">
-              <table class="app-contents-table-main" id="order-items">
-                <tr class="app-contents-header">
-                  <th>Item</th>
-                  <th>Price</th>
-                </tr>
-              </table>
-              <table class="app-contents-table-subtotal">
-                <tr>
-                  <td>Subtotal</td>
-                  <td style="color: white">jhghhgh</td>
-                  <td id="order-subtotal"></td>
-                </tr>
-                <tr class="app-contents-table">
-                  <th>Tax</th>
-                  <td />
-                  <th id="order-tax"></th>
-                </tr>
-                <tr class="app-contents-table">
-                  <th>Total</th>
-                  <td />
-                  <th id="order-total"></th>
-                </tr>
-                <tr class="app-contents-table">
-                  <th>Tips</th>
-                  <td />
-                  <th><input style="border: solid 1px rgba(151, 151, 151, 0.38); height: 20px;width: 35px; font-size: 15px; " type="text" id="order-percent-tips" onblur="percentTips(); getBalance()"><span style="font-size: 15px;"> % </span></th>
-                </tr>
-                <tr class="app-contents-table">
-                  <th style="color: white">Tips</th>
-                  <td />
-                  <th><input style="border: solid 1px rgba(151, 151, 151, 0.38); height: 20px;width: 35px;font-size: 15px;" type="text" id="order-amount-tips" onblur="amountTips(); getBalance()"><span style="font-size: 13px;"> $</span></th>
-                </tr>
-                <tr class="app-contents-table-balance" style="padding-top: 0px;">
-                  <td>Balance Due</td>
-                  <td />
-                  <td id="order-balance"></td>
-                </tr>
-              </table>
+
             </div>
             <div class="app-button-split-bill grad" onclick="goToItemsSelection()">
               Split Bill
