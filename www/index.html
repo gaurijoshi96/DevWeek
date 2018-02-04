@@ -193,7 +193,7 @@ border-collapse: collapse;">
 </tr>
 </table>
 
-  <div class="app-button-select-voyage-thrills">
+  <div class="app-button-select-voyage-thrills" onclick="processPayment()>
     Confirm
   </div>
 </div>
@@ -450,6 +450,124 @@ border-collapse: collapse;">
 
     return JSON.parse(xhttp.response);
 
+  }
+
+  function processPayment() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("POST", "https://demo.docusign.net/restapi/v2/accounts/4373511/envelopes/", false);
+      xhttp.setRequestHeader("Accept", "application/json");
+      xhttp.setRequestHeader("Content-Type", "application/json");
+      xhttp.setRequestHeader("x-docusign-authentication", "{\"Username\":\"hamsyari22@gmail.com\",  \"Password\":\"Docusign2018\",  \"IntegratorKey\":\"597cf3b4-7aee-4404-9cb8-6334611b559d\"}");
+
+      xhttp.send(
+          JSON.stringify({
+              "templateId": "fed0a354-51a8-4f8b-a1d8-058824eaa4e8",
+              "emailSubject": "Please review your trip confirmation",
+              "templateRoles": [
+                  {
+                      "email": "janesmith@mail.com",
+                      "roleName": "applicant",
+                      "name": "Jane Smith",
+                      "clientUserId": "1001",
+                      "tabs": {
+                          "fullNameTabs": [
+                              {
+                                  "anchorString": "inputFullName",
+                                  "anchorYOffset": "-6",
+                                  "fontSize": "Size14",
+                                  "name": "Full Name",
+                                  "recipientId": "1",
+                                  "tabLabel": "Full Name"
+                              }
+                          ],
+                          "emailTabs": [
+                              {
+                                  "anchorString": "inputEmail",
+                                  "anchorYOffset": "-6",
+                                  "fontSize": "Size14",
+                                  "name": "Email",
+                                  "recipientId": "1",
+                                  "tabLabel": "inputEmail",
+                                  "value": "janesmith@mail.com"
+                              }
+                          ],
+                          "signHereTabs": [
+                              {
+                                  "anchorString": "inputSignature",
+                                  "anchorUnits": "mms",
+                                  "anchorXOffset": "0",
+                                  "anchorYOffset": "0",
+                                  "name": "Please sign here",
+                                  "optional": "false",
+                                  "recipientId": "1",
+                                  "fontSize": "Size30",
+                                  "scaleValue": 4,
+                                  "tabLabel": "inputSignature"
+                              }
+                          ],
+                          "numberTabs": [
+                              {
+                                  "anchorString": "inputAmount",
+                                  "tabLabel": "inputAmount",
+                                  "fontSize": "Size14",
+                                  "value": "89",
+                                  "locked": "true"
+                              }
+                          ],
+                          "formulaTabs": [
+                              {
+                                  "recipientId": "1",
+                                  "required": "true",
+                                  "tabLabel": "tabPayment1",
+                                  "anchorString": "tabPayment1",
+                                  "formula": "[inputAmount] * 100",
+                                  "roundDecimalPlaces": "2",
+                                  "paymentDetails": {
+                                      "currencyCode": "USD",
+                                      "gatewayAccountId": "93a8fea2-42f4-4792-9bca-8b8221415beb",
+                                      "lineItems": [
+                                          {
+                                              "name": "Voyager Trip Package",
+                                              "description": "This is a trip package",
+                                              "itemCode": "VOYAGER0204",
+                                              "amountReference": "inputAmount"
+                                          }
+                                      ]
+                                  }
+                              }
+                          ]
+                      },
+                      "recipientId": "1"
+                  }
+              ],
+              "status": "sent"
+          })
+      );
+
+      console.log(JSON.parse(xhttp.response));
+      retrieveRecipientView(JSON.parse(xhttp.response).envelopeId);
+  }
+
+  function retrieveRecipientView(envelopeId) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("POST", "https://demo.docusign.net/restapi/v2/accounts/4373511/envelopes/" + envelopeId + "/views/recipient", false);
+      xhttp.setRequestHeader("Accept", "application/json");
+      xhttp.setRequestHeader("Content-Type", "application/json");
+      xhttp.setRequestHeader("x-docusign-authentication", "{\"Username\":\"hamsyari22@gmail.com\",  \"Password\":\"Docusign2018\",  \"IntegratorKey\":\"597cf3b4-7aee-4404-9cb8-6334611b559d\"}");
+
+      xhttp.send(
+          JSON.stringify({
+              "authenticationMethod":"email",
+              "clientUserId":"1001",
+              "email":"janesmith@mail.com",
+              "recipientId":"1",
+              "returnUrl":"http://httpbin.org/get",
+              "userName":"Jane Smith"
+          })
+      );
+
+      console.log(JSON.parse(xhttp.response));
+      window.location.href = JSON.parse(xhttp.response).url;
   }
 
 </script>
