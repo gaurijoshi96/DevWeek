@@ -73,11 +73,39 @@ body {
     -webkit-animation:fade 3000ms infinite;
 }
 
+.circle_left {
+    width: 80px;
+    height: 80px;
+    margin-top:-25px;
+    margin-left: 85px; 
+    background: white;
+    border-radius: 50px;
+}
+
+.circle_right {
+    width: 80px;
+    height: 80px;
+    margin-top: -77px;
+    margin-left: 226px;
+    background: white;
+    border-radius: 50px;
+}
+
+.col {
+   display: inline-block;
+   position: relative;
+   width: 30%;
+   margin:4% 4% 5% 3%;
+   padding:0;
+   background-color: transparent;
+    border-top: none;
+}
+
 .app-nav {
     color: white;
     width: 100%;
     height: 10%;
-    background-color: #009688;
+    background-color: #E9736B;
     text-align: center;
     font-size: 18px;
     display: flex;
@@ -200,21 +228,43 @@ body {
     font-family: "AvenirNext-Medium", sans-serif;
 }
 
-.app-button-split-bill {
-    margin-top: 20px;
-    background-color: #009688;
-    width: 90%;
+.app-button-take-me-here {
+    margin-top: 510px;
+    background-color: #fff;
+    color:#BBBBBB;
+    width: 70%;
     height: 40px;
-    margin-left: 20px;
+    margin-left: 70px;
     text-align: center;
     color: white;
-    font-family: "Avenir Next", sans-serif;
-    font-size: 18px;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 25px;
 }
+
+textarea:focus, input:focus {
+    color: #E9736B;
+}
+
+.app-button-select-voyage-thrills {
+    margin-top: 20px;
+    background-color: #E9736B;
+    width: 70%;
+    height: 50px;
+    margin-left: 70px;
+    text-align: center;
+    color: white;
+    font-family: "Lato-Bold", sans-serif;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 25px;
+}
+
 .app-button-split {
     margin-top: 10px;
     background-color: #009688;
@@ -238,14 +288,6 @@ body {
 
 .app-contents-header {
     font-family: "AvenirNext-Medium", sans-serif;
-}
-
-.grad {
-    background: #009688; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(-90deg, #27b7ff, #00c1a5); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(-90deg, #27b7ff, #00c1a5); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(-90deg, #27b7ff, #00c1a5); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(-90deg, #27b7ff, #00c1a5); /* Standard syntax (must be last) */
 }
 
 .app-contents-payment-successful {
@@ -351,6 +393,36 @@ body {
     align-content: space-between;
     justify-items: flex-start;
     width: 80%;
+}
+
+.progress {
+  width: 300px;
+  height: 16px;
+  background-color: #E9736B;
+  border-radius: 16px;
+  padding: 4px; 
+  margin-top: 200px;
+  margin-left: 50px;
+}
+
+.bar {
+  background-color: #fff;
+  width: 10%;
+  height: 100%;
+  border-radius: 16px;
+  animation-name: increase;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes increase {
+  from {
+    width: 1%
+  }
+  to {
+    width: 100%
+  }
 }
 
 input {

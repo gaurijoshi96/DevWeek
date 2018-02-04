@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
+ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -47,4 +47,39 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+
+};
+
+var tomtom = {
+
+    initialize: function() {
+              var route = {
+          "points": [{
+            "lat": 37.7524152343544,
+            "lon":-122.43576049804686
+        },
+        {
+            "lat": 37.70660472542312,
+            "lon":-122.43301391601562
+        },
+        {
+            "lat": 37.712059855877314,
+            "lon":-122.36434936523438
+        },
+        {
+            "lat": 37.75350561243041,
+            "lon":-122.37396240234374
+        }]
+    }
+
+$.post('https://api.tomtom.com/search/2/searchAlongRoute/pizza[.JSON]',  // url
+       { myData: "route" }, // data to be submit
+       {contentType: "application/json" },
+       function(data, status, xhr) {   // success callback function
+                alert('status: ' + status + ', data: ' + data.responseData);
+            },
+        'json');
+        
+    }
+
 };
