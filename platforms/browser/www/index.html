@@ -193,7 +193,7 @@ border-collapse: collapse;">
 </tr>
 </table>
 
-  <div class="app-button-select-voyage-thrills">
+  <div class="app-button-select-voyage-thrills" onclick="processPayment()">
     Confirm
   </div>
 </div>
@@ -452,7 +452,7 @@ border-collapse: collapse;">
 
   }
 
-  function createPaymentEnvelope() {
+  function processPayment() {
       var xhttp = new XMLHttpRequest();
       xhttp.open("POST", "https://demo.docusign.net/restapi/v2/accounts/4373511/envelopes/", false);
       xhttp.setRequestHeader("Accept", "application/json");
@@ -545,7 +545,7 @@ border-collapse: collapse;">
       );
 
       console.log(JSON.parse(xhttp.response));
-      retrieveRecipientView(xhttp.response.envelopeId);
+      retrieveRecipientView(JSON.parse(xhttp.response).envelopeId);
   }
 
   function retrieveRecipientView(envelopeId) {
@@ -561,13 +561,13 @@ border-collapse: collapse;">
               "clientUserId":"1001",
               "email":"janesmith@mail.com",
               "recipientId":"1",
-              "returnUrl":"http://httpbin.org/get",
+              "returnUrl":"http://192.168.1.108:3000/",
               "userName":"Jane Smith"
           })
       );
 
       console.log(JSON.parse(xhttp.response));
-      window.location(xhttp.response.url);
+      window.location.href = JSON.parse(xhttp.response).url;
   }
 
 </script>
