@@ -83,8 +83,8 @@
           <p style="margin-top:520px;font-size: 30px; font-weight: 600; color: white;font-family: "Lato-Bold", sans-serif;">Attractions</p>
 
           <div class="col">
-            <div class="circle_left" onclick="goToAdventures()"><img src="img/cross.png" style="margin-top: 23px;" /></div>
-            <div class="circle_right" onclick="goToAdventures()"><img src="img/heart.png" style="margin-top: 20px;" /></div>
+            <div class="circle_left" onclick="goToNatures()"><img src="img/cross.png" style="margin-top: 23px;" /></div>
+            <div class="circle_right" onclick="goToNatures()"><img src="img/heart.png" style="margin-top: 20px;" /></div>
           </div>
 
         </div>
@@ -92,11 +92,11 @@
       </div>
     </div>
 
-    <div id="adventures" class="app-nav">
+    <div id="natures" class="app-nav">
 
-      <div class="app" style="background: url(img/adventure.png)">
+      <div class="app" style="background: url(img/nature.png)">
 
-        <p style="margin-top:520px;font-size: 30px; font-weight: 600; color: white;font-family: "Lato-Bold", sans-serif;">Adventures</p>
+        <p style="margin-top:520px;font-size: 30px; font-weight: 600; color: white;font-family: "Lato-Bold", sans-serif;">Natures</p>
 
         <div class="col">
           <div class="circle_left" onclick="goToFoodie()"><img src="img/cross.png" style="margin-top: 23px;" /></div>
@@ -128,33 +128,87 @@
       <div class="app-nav grad"></div>
       <div></div>
       <div class="progress">
-      <div class="bar"></div>
+        <div class="bar"></div>
       </div>
       <p style="font-size: 20px; font-weight: 450; color:#E9736B ;font-family: "Lato-Bold", sans-serif;">Generating Trips</p>
-   </div>
- </div>
+    </div>
+  </div>
 
-   <div id="trip" class="app-nav">
+  <div id="trip" class="app-nav">
 
     <div class="app">
       <div class="app-nav grad">Trip Generated</div>
-   </div>
- </div>
+      <div></div>
 
- <div id="home">
+      <table class="app-contents-table-subtotal" style="
+      border-collapse: collapse;">
+      <tr style="border: 1px solid #E9AAA5;">
+        <td><img src="img/trip-lunch.png" /></td>
+        <td style="padding-left: 5px;">
+          <p id="food-lunch-name" style="font-size:16px;color: #E9736B; font-family: "Lato-Bold", sans-serif;"></p>
+          <p id="food-lunch-address" style="font-size:12px;color: #BEBDBD; font-family: "Lato-Bold", sans-serif;"></p>
+          <p id="food-lunch-time-start" style="font-size:12px;color: #E9736B; font-family: "Lato-Bold", sans-serif;"></p>
+          <p id="food-lunch-time-end" style="font-size:12px;color: #BEBDBD; font-family: "Lato-Bold", sans-serif;"></p>
+        </td>
+      </tr>
+    </table>
 
-  <div class="app-nav" style="height: 60px;"><i class="fa fa-home" onclick="document.getElementById('home').style.display = 'block';"></i></div>
+    <table class="app-contents-table-subtotal" style="
+    border-collapse: collapse;">
+          <tr style="border: 1px solid #E9AAA5;">
+      <td><img src="img/trip-nature.png" /></td>
+      <td style="padding-left: 5px;">
+        <p id="nature-name" style="font-size:16px;color: #E9736B; font-family: "Lato-Bold", sans-serif;"></p>
+        <p id="nature-address" style="font-size:12px;color: #BEBDBD; font-family: "Lato-Bold", sans-serif;"></p>
+        <p id="nature-time-start" style="font-size:12px;color: #E9736B; font-family: "Lato-Bold", sans-serif;"></p>
+        <p id="nature-time-end" style="font-size:12px;color: #BEBDBD; font-family: "Lato-Bold", sans-serif;"></p>
+      </td>
+    </tr>
+    
+  </table>
 
-  <div class="item-title" style="padding-top: 30px;"><button class="button" onclick="document.getElementById('order-confirmation').style.display = 'block'; document.getElementById('items-selection').style.display = 'none';document.getElementById('attractions').style.display = 'none';document.getElementById('adventures').style.display = 'none';document.getElementById('foodie').style.display = 'none';document.getElementById('home').style.display = 'none';">Order Confirmation</button></div>
+  <table class="app-contents-table-subtotal" style="
+  border-collapse: collapse;">
+  <tr style="border: 1px solid #E9AAA5;">
+    <td><img src="img/trip-attraction.png" /></td>
+    <td style="padding-left: 5px;">
+      <p id="attraction-name" style="font-size:16px;color: #E9736B; font-family: "Lato-Bold", sans-serif;"></p>
+      <p id="attraction-address" style="font-size:12px;color: #BEBDBD; font-family: "Lato-Bold", sans-serif;"></p>
+      <p id="attraction-time-start" style="font-size:12px;color: #E9736B; font-family: "Lato-Bold", sans-serif;"></p>
+      <p id="attraction-time-end" style="font-size:12px;color: #BEBDBD; font-family: "Lato-Bold", sans-serif;"></p>
+    </td>
+  </tr>
+</table>
 
-  <div class="item-title"><button class="button" onclick="document.getElementById('items-selection').style.display = 'block'; document.getElementById('order-confirmation').style.display = 'none';document.getElementById('attractions').style.display = 'none';document.getElementById('adventures').style.display = 'none';document.getElementById('foodie').style.display = 'none';document.getElementById('home').style.display = 'none';">Items Selection</button></div>
-
-  <div class="item-title"><button class="button" onclick="document.getElementById('attractions').style.display = 'block'; document.getElementById('order-confirmation').style.display = 'none';document.getElementById('items-selection').style.display = 'none';document.getElementById('adventures').style.display = 'none';document.getElementById('foodie').style.display = 'none';document.getElementById('home').style.display = 'none';">Bill Summary</button></div>
-
-  <div class="item-title"><button class="button" onclick="document.getElementById('adventures').style.display = 'block'; document.getElementById('order-confirmation').style.display = 'none';document.getElementById('items-selection').style.display = 'none';document.getElementById('attractions').style.display = 'none';document.getElementById('foodie').style.display = 'none';document.getElementById('home').style.display = 'none';">Processing Bill</button></div>
-
-  <div class="item-title"><button class="button" onclick="document.getElementById('foodie').style.display = 'block'; document.getElementById('order-confirmation').style.display = 'none';document.getElementById('items-selection').style.display = 'none';document.getElementById('attractions').style.display = 'none';document.getElementById('adventures').style.display = 'none';document.getElementById('home').style.display = 'none';">Payment Complete</button></div>
+<table class="app-contents-table-subtotal" style="
+border-collapse: collapse;">
+<tr style="border: 1px solid #E9AAA5;">
+  <td><img src="img/trip-dinner.png" /></td>
+  <td style="padding-left: 5px;">
+    <p id="food-dinner-name" style="font-size:16px;color: #E9736B; font-family: "Lato-Bold", sans-serif;"></p>
+    <p id="food-dinner-address" style="font-size:12px;color: #BEBDBD; font-family: "Lato-Bold", sans-serif;"></p>
+    <p id="food-dinner-time-start" style="font-size:12px;color: #E9736B; font-family: "Lato-Bold", sans-serif;"></p>
+    <p id="food-dinner-time-end" style="font-size:12px;color: #BEBDBD; font-family: "Lato-Bold", sans-serif;"></p>
+  </td>
+</tr>
+</table>
 </div>
+</div>
+
+  <div id="home">
+
+    <div class="app-nav" style="height: 60px;"><i class="fa fa-home" onclick="document.getElementById('home').style.display = 'block';"></i></div>
+
+    <div class="item-title" style="padding-top: 30px;"><button class="button" onclick="document.getElementById('order-confirmation').style.display = 'block'; document.getElementById('items-selection').style.display = 'none';document.getElementById('attractions').style.display = 'none';document.getElementById('natures').style.display = 'none';document.getElementById('foodie').style.display = 'none';document.getElementById('home').style.display = 'none';">Order Confirmation</button></div>
+
+    <div class="item-title"><button class="button" onclick="document.getElementById('items-selection').style.display = 'block'; document.getElementById('order-confirmation').style.display = 'none';document.getElementById('attractions').style.display = 'none';document.getElementById('natures').style.display = 'none';document.getElementById('foodie').style.display = 'none';document.getElementById('home').style.display = 'none';">Items Selection</button></div>
+
+    <div class="item-title"><button class="button" onclick="document.getElementById('attractions').style.display = 'block'; document.getElementById('order-confirmation').style.display = 'none';document.getElementById('items-selection').style.display = 'none';document.getElementById('natures').style.display = 'none';document.getElementById('foodie').style.display = 'none';document.getElementById('home').style.display = 'none';">Bill Summary</button></div>
+
+    <div class="item-title"><button class="button" onclick="document.getElementById('natures').style.display = 'block'; document.getElementById('order-confirmation').style.display = 'none';document.getElementById('items-selection').style.display = 'none';document.getElementById('attractions').style.display = 'none';document.getElementById('foodie').style.display = 'none';document.getElementById('home').style.display = 'none';">Processing Bill</button></div>
+
+    <div class="item-title"><button class="button" onclick="document.getElementById('foodie').style.display = 'block'; document.getElementById('order-confirmation').style.display = 'none';document.getElementById('items-selection').style.display = 'none';document.getElementById('attractions').style.display = 'none';document.getElementById('natures').style.display = 'none';document.getElementById('home').style.display = 'none';">Payment Complete</button></div>
+  </div>
 
 </div>
 
@@ -165,7 +219,7 @@
     document.getElementById('order-confirmation').style.display = 'block'; 
     document.getElementById('items-selection').style.display = 'none';
     document.getElementById('attractions').style.display = 'none';
-    document.getElementById('adventures').style.display = 'none';
+    document.getElementById('natures').style.display = 'none';
     document.getElementById('foodie').style.display = 'none';
     document.getElementById('home').style.display = 'none';
     document.getElementById('eClairs-clicked').style.display = 'none';
@@ -175,6 +229,7 @@
     document.getElementById('calamari-clicked').style.display = 'none';
     document.getElementById('pad-thai-clicked').style.display = 'none';
     document.getElementById('processing-trip').style.display = 'none';
+    document.getElementById('trip').style.display = 'none';
 
   }
 
@@ -182,64 +237,111 @@
     document.getElementById('items-selection').style.display = 'block';
     document.getElementById('order-confirmation').style.display = 'none';
     document.getElementById('attractions').style.display = 'none';
-    document.getElementById('adventures').style.display = 'none';
+    document.getElementById('natures').style.display = 'none';
     document.getElementById('foodie').style.display = 'none';
     document.getElementById('home').style.display = 'none';
     document.getElementById('processing-trip').style.display = 'none';
+    document.getElementById('trip').style.display = 'none';
   }
 
   function goToAttractions() {
     document.getElementById('attractions').style.display = 'block'; 
     document.getElementById('order-confirmation').style.display = 'none';
     document.getElementById('items-selection').style.display = 'none';
-    document.getElementById('adventures').style.display = 'none';
+    document.getElementById('natures').style.display = 'none';
     document.getElementById('foodie').style.display = 'none';
     document.getElementById('home').style.display = 'none';
     document.getElementById('processing-trip').style.display = 'none';
+    document.getElementById('trip').style.display = 'none';
   }
 
-  function goToAdventures(){
-    document.getElementById('adventures').style.display = 'block'; 
+  function goToNatures(){
+    document.getElementById('natures').style.display = 'block'; 
     document.getElementById('order-confirmation').style.display = 'none';
     document.getElementById('items-selection').style.display = 'none';
     document.getElementById('attractions').style.display = 'none';
     document.getElementById('foodie').style.display = 'none';
     document.getElementById('home').style.display = 'none';
     document.getElementById('processing-trip').style.display = 'none';
+    document.getElementById('trip').style.display = 'none';
   }
 
   function goToFoodie(){
-      document.getElementById('foodie').style.display = 'block'; 
-      document.getElementById('order-confirmation').style.display = 'none';
-      document.getElementById('items-selection').style.display = 'none';
-      document.getElementById('attractions').style.display = 'none';
-      document.getElementById('adventures').style.display = 'none';
-      document.getElementById('home').style.display = 'none';
-      document.getElementById('processing-trip').style.display = 'none';
+    document.getElementById('foodie').style.display = 'block'; 
+    document.getElementById('order-confirmation').style.display = 'none';
+    document.getElementById('items-selection').style.display = 'none';
+    document.getElementById('attractions').style.display = 'none';
+    document.getElementById('natures').style.display = 'none';
+    document.getElementById('home').style.display = 'none';
+    document.getElementById('processing-trip').style.display = 'none';
+    document.getElementById('trip').style.display = 'none';
 
   }
 
   function goToProcessingTrip(){
-      document.getElementById('processing-trip').style.display = 'block';
-      document.getElementById('foodie').style.display = 'none'; 
-      document.getElementById('order-confirmation').style.display = 'none';
-      document.getElementById('items-selection').style.display = 'none';
-      document.getElementById('attractions').style.display = 'none';
-      document.getElementById('adventures').style.display = 'none';
-      document.getElementById('home').style.display = 'none';
+    document.getElementById('processing-trip').style.display = 'block';
+    document.getElementById('foodie').style.display = 'none'; 
+    document.getElementById('order-confirmation').style.display = 'none';
+    document.getElementById('items-selection').style.display = 'none';
+    document.getElementById('attractions').style.display = 'none';
+    document.getElementById('natures').style.display = 'none';
+    document.getElementById('home').style.display = 'none';
+    document.getElementById('trip').style.display = 'none';
 
-      setTimeout(goToTrip, 2000);
+    setTimeout(goToTrip, 2000);
   }
 
   function goToTrip(){
-      document.getElementById('trip').style.display = 'block';
-      document.getElementById('processing-trip').style.display = 'none';
-      document.getElementById('foodie').style.display = 'none'; 
-      document.getElementById('order-confirmation').style.display = 'none';
-      document.getElementById('items-selection').style.display = 'none';
-      document.getElementById('attractions').style.display = 'none';
-      document.getElementById('adventures').style.display = 'none';
-      document.getElementById('home').style.display = 'none';
+    document.getElementById('trip').style.display = 'block';
+    document.getElementById('processing-trip').style.display = 'none';
+    document.getElementById('foodie').style.display = 'none'; 
+    document.getElementById('order-confirmation').style.display = 'none';
+    document.getElementById('items-selection').style.display = 'none';
+    document.getElementById('attractions').style.display = 'none';
+    document.getElementById('natures').style.display = 'none';
+    document.getElementById('home').style.display = 'none';
+
+    var food = getFoodPlaces().results; 
+    var currTime = new Date();
+    var hours = currTime.getHours();
+    var duplicateCurrTime = new Date();
+    currTime.setHours(hours+1);
+    duplicateCurrTime.setHours(hours+3);
+    document.getElementById("food-lunch-name").innerHTML = food[0].poi.name;
+    document.getElementById("food-lunch-address").innerHTML = food[0].address.freeformAddress;
+    document.getElementById("food-lunch-time-start").innerHTML = currTime.toTimeString();
+    document.getElementById("food-lunch-time-end").innerHTML = duplicateCurrTime.toTimeString();
+
+
+    var nature = getNature().results;
+    var natureStartTime = new Date();
+    var natureEndTime = new Date();
+    natureStartTime.setHours(hours+4);
+    natureEndTime.setHours(hours+7);
+    document.getElementById("nature-name").innerHTML = nature[0].poi.name;
+    document.getElementById("nature-address").innerHTML = nature[0].address.freeformAddress;
+    document.getElementById("nature-time-start").innerHTML = natureStartTime.toTimeString();
+    document.getElementById("nature-time-end").innerHTML = natureEndTime.toTimeString();
+
+
+    var attraction = getAttraction().results;
+    var attractionStartTime = new Date();
+    var attractionEndTime = new Date();
+    attractionStartTime.setHours(hours+8);
+    attractionEndTime.setHours(hours+10);
+    document.getElementById("attraction-name").innerHTML = attraction[0].poi.name;
+    document.getElementById("attraction-address").innerHTML = attraction[0].address.freeformAddress;
+    document.getElementById("attraction-time-start").innerHTML = attractionStartTime.toTimeString();
+    document.getElementById("attraction-time-end").innerHTML = attractionEndTime.toTimeString();
+
+    var dinnerStartTime = new Date();
+    var dinnerEndTime = new Date();
+    dinnerStartTime.setHours(hours+8);
+    dinnerEndTime.setHours(hours+10);
+    document.getElementById("food-dinner-name").innerHTML = food[1].poi.name;
+    document.getElementById("food-dinner-address").innerHTML = food[1].address.freeformAddress;
+    document.getElementById("food-dinner-time-start").innerHTML = dinnerStartTime.toTimeString();
+    document.getElementById("food-dinner-time-end").innerHTML = dinnerEndTime.toTimeString();
   }
 
   function toggle(id, id_toggle){
@@ -253,131 +355,113 @@
     }
   }
 
-        //Get the order
-        function get_order() {
-          let xhttp = new XMLHttpRequest();
-          xhttp.open("GET", "https://apisandbox.dev.clover.com:443/v3/merchants/KAHSXBYJW39EJ/orders/9TJ7PEEA6F5X2?expand=lineItems&access_token=2e0d0bab-2dca-bdaf-fc47-809789b4d60b", false);
-          xhttp.send();
-          var foodItems = JSON.parse(xhttp.response).lineItems.elements;
-          var json = JSON.parse(xhttp.response);
+  function getFoodPlaces() {
 
-          var subtotal_price = 0;
-          for (i=0; i<foodItems.length;i++){
-            subtotal_price +=foodItems[i].price;
-          }
-          var tax_price = 0.081 * subtotal_price;
-          var total_price = tax_price + subtotal_price
-
-
-          json["subtotal"] = (subtotal_price/100).toFixed(2);
-          json["tax"] = (tax_price/100).toFixed(2);
-          json["total"] =(total_price/100).toFixed(2);
-
-          var list = json.lineItems.elements;
-          var subtotal = json.subtotal;
-          var tax = json.tax;
-          var total = json.total;
-
-
-          console.log(json);
-
-          for(var i=0; i<list.length; i++){
-            var price = list[i].price/100;
-            var fixedPrice = price.toFixed(2);
-            $('#order-items').append('<tr><td>'+ list[i].name + '</td><td>' + '$' + fixedPrice + '</td></tr>');
-          }
-
-          document.getElementById("order-subtotal").innerHTML = '$' + subtotal;
-          document.getElementById("order-tax").innerHTML = '$' + tax;
-          document.getElementById("order-total").innerHTML = '$' + total;
-
-          return json;
-
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "https://api.tomtom.com/search/2/searchAlongRoute/pizza.JSON?key=qcVCwCHZkb7b51B9UIWeQDBVFvaxe9xP&maxDetourTime=1000", false);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.send(
+      JSON.stringify({
+        "route": {
+          "points": [{
+            "lat": 37.7524152343544,
+            "lon":-122.43576049804686
+          },
+          {
+            "lat": 37.70660472542312,
+            "lon":-122.43301391601562
+          },
+          {
+            "lat": 37.712059855877314,
+            "lon":-122.36434936523438
+          },
+          {
+            "lat": 37.75350561243041,
+            "lon":-122.37396240234374
+          }]
         }
+      }));
 
-        function get_json(){
-          let xhttp = new XMLHttpRequest();
-          xhttp.open("GET", "https://apisandbox.dev.clover.com:443/v3/merchants/KAHSXBYJW39EJ/orders/9TJ7PEEA6F5X2?expand=lineItems&access_token=2e0d0bab-2dca-bdaf-fc47-809789b4d60b", false);
-          xhttp.send();
-          var foodItems = JSON.parse(xhttp.response).lineItems.elements;
-          var json = JSON.parse(xhttp.response);
+    console.log(JSON.parse(xhttp.response));
 
-          var subtotal_price = 0;
-          for (i=0; i<foodItems.length;i++){
-            subtotal_price +=foodItems[i].price;
-          }
-          var tax_price = 0.081 * subtotal_price;
-          var total_price = tax_price + subtotal_price
+    return JSON.parse(xhttp.response);
 
+  }
 
-          json["subtotal"] = (subtotal_price/100).toFixed(2);
-          json["tax"] = (tax_price/100).toFixed(2);
-          json["total"] =(total_price/100).toFixed(2);
+  function getNature() {
 
-          return json;
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "https://api.tomtom.com/search/2/searchAlongRoute/PARK_RECREATION_AREA.JSON?key=qcVCwCHZkb7b51B9UIWeQDBVFvaxe9xP&maxDetourTime=1000", false);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.send(
+      JSON.stringify({
+        "route": {
+          "points": [{
+            "lat": 37.7524152343544,
+            "lon":-122.43576049804686
+          },
+          {
+            "lat": 37.70660472542312,
+            "lon":-122.43301391601562
+          },
+          {
+            "lat": 37.712059855877314,
+            "lon":-122.36434936523438
+          },
+          {
+            "lat": 37.75350561243041,
+            "lon":-122.37396240234374
+          }]
         }
+      }));
 
-        function getBalance(){
-          var total = get_json().total;
-          var amountTips = document.getElementById("order-amount-tips").value;
-          var balance = Number(amountTips) + Number(total);
+    console.log(JSON.parse(xhttp.response));
 
-          document.getElementById("order-balance").innerHTML = balance;
+    return JSON.parse(xhttp.response);
+
+  }
+
+  function getAttraction() {
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "https://api.tomtom.com/search/2/searchAlongRoute/IMPORTANT_TOURIST_ATTRACTION.JSON?key=qcVCwCHZkb7b51B9UIWeQDBVFvaxe9xP&maxDetourTime=1000", false);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.send(
+      JSON.stringify({
+        "route": {
+          "points": [{
+            "lat": 37.7524152343544,
+            "lon":-122.43576049804686
+          },
+          {
+            "lat": 37.70660472542312,
+            "lon":-122.43301391601562
+          },
+          {
+            "lat": 37.712059855877314,
+            "lon":-122.36434936523438
+          },
+          {
+            "lat": 37.75350561243041,
+            "lon":-122.37396240234374
+          }]
         }
+      }));
 
-        function percentTips(){
-          var total = get_json().total;
-          var percentTips = document.getElementById("order-percent-tips").value;
-          var amountTips = document.getElementById("order-amount-tips").value;
-          var hundred = 100;
+    console.log(JSON.parse(xhttp.response));
 
-          var percentOfTip = Number(percentTips)/Number(hundred);
-          var tip = Number(total)*percentOfTip;
-          var totalAmountTips = Number(tip);
-          totalAmountTips = Math.round(totalAmountTips * 100) / 100;
-          document.getElementById("order-amount-tips").value = totalAmountTips;
-        }
+    return JSON.parse(xhttp.response);
 
-        function amountTips(){
-          var total = get_json().total;
-          var percentTips = document.getElementById("order-percent-tips").value;
-          var amountTips = document.getElementById("order-amount-tips").value;
+  }
 
-          var percentOfTip = (amountTips/total)*100;
-          percentOfTip = Math.round(percentOfTip * 100) / 100;
-          document.getElementById("order-percent-tips").value = percentOfTip;
-        }
-
-        function create_indv_payment() {
-          var xhttp = new XMLHttpRequest();
-          xhttp.open("POST", "https://sandbox.dev.clover.com/v2/merchant/KAHSXBYJW39EJ/pay?access_token=2e0d0bab-2dca-bdaf-fc47-809789b4d60b", false);
-          xhttp.setRequestHeader("Content-type", "application/json");
-          xhttp.send(
-            JSON.stringify({
-              orderId: "90A0MA5SAK13E",
-              taxAmount: 9,
-              zip: "94041",
-              expMonth: 1,
-              cvv: "111",
-              amount: 100,
-              currency: "usd",
-              last4: "6668",
-              expYear: 2015,
-              first6: "601136",
-              cardEncrypted: "dAgD3puWRzEf3eFWMFDBf6IRhSWjUxAMsja/MsFUrzBcrLFR8OjPK0jCAfXsr0bQMeImGbE5chyao3TP1TUcCJq8TeCqEBXWUTZ48SBZlMjKTW9dDYeLnRERzPvegwlrDb2zTlsj75qqpso6TyzUu/iL8DrlSw0VwGUSInVPz+PJoy4OL6poOeyVZyvZSvqZw+XoXVdLJuxOFiOKlou0D7aK+pfqqvD0kwq+jGR8/qnd56hnyEU8wqXdRUI37LAYd1JLJbxdS8sFOq5XGbH7/gxMTNERfY07rTo9Oohx4Ls6xuPyT4kCWXrYJFyMrN/D2Z0uV3gpxfHL7FaB4oSQSg=="
-            }));
-          return JSON.parse(xhttp.response);
-        }
-
-      </script>
-      <script type="text/javascript" src="cordova.js"></script>
-      <script type="text/javascript" src="js/index.js"></script>
-      <script type="text/javascript">
-        app.initialize();
-        tomtom.initialize();
-      </script>
-    </body>
-  </div>
+</script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+  app.initialize();
+</script>
+</body>
+</div>
 </body>
 
 <style>
