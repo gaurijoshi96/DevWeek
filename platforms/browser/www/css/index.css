@@ -231,8 +231,16 @@ body {
     font-family: "AvenirNext-Medium", sans-serif;
 }
 
+.tagline {
+    margin-top: 130px;
+    font-size: 47px;
+    font-family: "SignPainter", sans-serif;
+    color:white;
+    font-weight: normal;
+}
+
 .app-button-take-me-here {
-    margin-top: 510px;
+    margin-top: 180px;
     background-color: #fff;
     color:#BBBBBB;
     width: 70%;
@@ -528,6 +536,15 @@ textarea:focus, input:focus {
   .right {
     left: 0%;
   }
+}
+
+.dustbin{
+    margin-top: 12px;
+    margin-left: 120px;
+}
+
+.dustbin:hover{
+    color:#E9736B;
 }
 
 @keyframes increase {

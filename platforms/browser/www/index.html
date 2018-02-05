@@ -51,6 +51,12 @@
         <div id="order-confirmation">
           <div class="app" style="background: url(img/home.png)">
 
+            <div id="logo" style="margin-top: 50px;">
+              <img src="img/logo.png">
+            </div>
+            <div class="tagline">
+              Taking you places
+            </div>
             <input class="app-button-take-me-here" placeholder="Take me here" type="text"></input>
 
             <div class="app-button-select-voyage-thrills" onclick="goToItemsSelection()">
@@ -126,7 +132,9 @@
 
     <div class="app">
       <div class="app-nav grad"></div>
-      <div></div>
+        <div id="pinklogo" style="margin-top: 50px;">
+        <img src="img/pinklogo.png">
+      </div> 
       <div class="progress">
         <div class="bar"></div>
       </div>
@@ -143,6 +151,7 @@
       <div class="timeline">
         <div class="container right">
           <h2 style="color:#E9736B; font-size: 16px;float: left;padding-left: 14px;">13:00 - 14:00</h2>
+          <img src="img/dustbin.png" class="dustbin" onclick="refreshFood()" />
           <table class="app-contents-table-subtotal" style="
           border-collapse: collapse;box-shadow: 3px 3px #9C9898;">
           <tr style="border: 1px solid #E9AAA5;">
@@ -157,12 +166,12 @@
 
 
       <div class="container right">
-          <h2 style="color:#E9736B; font-size: 16px;float: left;padding-left: 14px;">Uber - 17 Mins</h2><br>
-          <img src="img/uber.png" style="width: 70px;padding-left: 0px; margin-left: 0px;"/>
-      </div>
+           <h2 style="color:#E9736B; font-size: 16px;font-family: "Lato-Bold", sans-serif;""><img src="img/uber.png" style="width: 70px;padding-bottom: 0px;" />Uber - 17 Mins</h2>
+        </div>
 
       <div class="container right">
           <h2 style="color:#E9736B; font-size: 16px;float: left;padding-left: 14px;">14:30 - 17:00</h2>
+          <img src="img/dustbin.png" class="dustbin" onclick="refreshFood()" />
           <table class="app-contents-table-subtotal" style="
           border-collapse: collapse;box-shadow: 3px 3px #9C9898;">
           <tr style="border: 1px solid #E9AAA5;">
@@ -176,11 +185,12 @@
       </div>
 
         <div class="container right">
-           <p style="color:#E9736B; font-size: 16px;font-family: "Lato-Bold", sans-serif;""><img src="img/uber.png" style="width: 70px;padding-bottom: 0px;" />Uber - 9 Mins</p>
+           <h2 style="color:#E9736B; font-size: 16px;font-family: "Lato-Bold", sans-serif;""><img src="img/uber.png" style="width: 70px;padding-bottom: 0px;" />Uber - 9 Mins</h2>
         </div>
 
         <div class="container right">
           <h2 style="color:#E9736B; font-size: 16px;float: left;padding-left: 14px;">17:30 - 18:30</h2>
+          <img src="img/dustbin.png" class="dustbin" onclick="refreshFood()" />
           <table class="app-contents-table-subtotal" style="
           border-collapse: collapse;box-shadow: 3px 3px #9C9898;">
           <tr style="border: 1px solid #E9AAA5;">
@@ -195,6 +205,7 @@
 
         <div class="container right">
           <h2 style="color:#E9736B; font-size: 16px;float: left;padding-left: 14px;">17:30 - 18:30</h2>
+          <img src="img/dustbin.png" class="dustbin" onclick="refreshFood()" />
           <table class="app-contents-table-subtotal" style="
           border-collapse: collapse;box-shadow: 3px 3px #9C9898;">
           <tr style="border: 1px solid #E9AAA5;">
@@ -625,6 +636,12 @@ border-collapse: collapse;">
  
       console.log(JSON.parse(xhttp.response)); 
       window.location.href = JSON.parse(xhttp.response).url; 
+  }
+
+  function refreshFood(){
+
+    document.getElementById("food-lunch-name").innerHTML = "Basso's";
+    document.getElementById("food-lunch-address").innerHTML = "3782 24th St, San Francisco, CA 94114";
   }
 
 </script>
